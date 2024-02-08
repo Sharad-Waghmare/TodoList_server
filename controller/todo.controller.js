@@ -2,7 +2,7 @@ const todoModel = require('../model/todo.model')
 
 
 // Get all todoList
-async function getAlltodoList(req, res){
+const  getAlltodoList = async (req, res)=>{
     try {
         const todoData = await todoModel.find();
         if(todoData){
@@ -27,6 +27,7 @@ async function getAddtodoList(req, res){
         const createTodo = new todoModel({
             name: name,
             description: description,
+            status: false,
         });
 
         createTodo.save();
@@ -45,19 +46,17 @@ async function getAddtodoList(req, res){
 }
 
 
+
+
 //
 async function getUpdatetodo (req, res){
     try {
         const id = req.params.todo_id;
-        const {name, description} = req.body;
-
-        // const todoData = await todoModel.findOne({ _id: id});
 
         const updateTodo = await todoModel.updateOne({_id: id}, 
             {
                 $set:{
-                    name: name,
-                    description: description,
+                    status: true
                 }
         });
 
