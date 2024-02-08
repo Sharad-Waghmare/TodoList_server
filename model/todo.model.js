@@ -9,10 +9,10 @@ const todoListSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    // status: {
-    //     type: Boolean,
-    //     required: true
-    // },
+    status: {
+        type: Boolean,
+        required: true
+    },
     
     createdAt:{
         type: Date,
