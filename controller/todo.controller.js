@@ -1,7 +1,7 @@
 const todoModel = require('../model/todo.model')
 
 
-// Get all todoList
+
 const  getAlltodoList = async (req, res)=>{
     try {
         const todoData = await todoModel.find();
@@ -19,8 +19,7 @@ const  getAlltodoList = async (req, res)=>{
 };
 
 
-//Add todo Data
-async function getAddtodoList(req, res){
+const getAddtodoList = async(req, res) =>{
     try {
         const {name, description} = req.body;
 
@@ -48,8 +47,7 @@ async function getAddtodoList(req, res){
 
 
 
-//
-async function getUpdatetodo (req, res){
+const getUpdatetodo = async (req, res) =>{
     try {
         const id = req.params.todo_id;
 
@@ -73,8 +71,8 @@ async function getUpdatetodo (req, res){
     }
 };
 
-//
-async function getDeletetodo(req, res){
+
+const getDeletetodo = async(req, res)=>{
     try {
         const id = req.params.todo_id;
 
