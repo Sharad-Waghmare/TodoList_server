@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false}));
 
 app.use(cors());
 var corsOptions = {
-  origin: ["https://vermillion-longma-3e7be0.netlify.app"],
+  origin: ["https://deluxe-beignet-ea3fcd.netlify.app"],
   optionsSuccessStatus: 200, 
 };
 
