@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false}));
 
 app.use(cors());
 var corsOptions = {
-  origin: ["http://localhost:3000"],
+  origin: ["https://vermillion-longma-3e7be0.netlify.app"],
   optionsSuccessStatus: 200, 
 };
 
@@ -22,10 +22,14 @@ app.listen(PORT, ()=>{
     console.log("server running on " + PORT);
 });
 
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  // Increase the connection timeout to 60 seconds (default is 30 seconds)
+  serverSelectionTimeoutMS: 60000,
+};
 
-
-mongoose.connect(process.env.MONGO_ATLAS_URL, {
-})
+mongoose.connect(process.env.MONGO_ATLAS_URL, options)
 .then(() => {
   console.log("MongooDB Connected!");
 })
