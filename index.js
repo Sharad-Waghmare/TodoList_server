@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false}));
 
 app.use(cors());
 var corsOptions = {
-  origin: ["http://localhost:3000"],
+  origin: ["http://localhost:3000", "https://65c60a5d945b3c9432d81244--vermillion-longma-3e7be0.netlify.app"],
   optionsSuccessStatus: 200, 
 };
 
